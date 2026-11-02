@@ -24,7 +24,7 @@ class FoundationTests(unittest.TestCase):
         self.assertTrue(database_is_ready(db_path))
         with closing(sqlite3.connect(db_path)) as connection:
             count = connection.execute("SELECT COUNT(*) FROM app_meta").fetchone()[0]
-        self.assertEqual(count, 1)
+        self.assertEqual(count, 2)
 
     def test_health_uses_configured_database(self) -> None:
         db_path = self.make_db_path()
